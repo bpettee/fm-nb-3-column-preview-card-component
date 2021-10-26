@@ -1,3 +1,4 @@
+/* CSS reset------------------------------------------------------ */
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -16,7 +17,9 @@ body {
   line-height: 1.5; /*min of 1.5 for accessibility*/
 }
 
-#wrapper {
+/* Main Content------------------------------------------------------ */
+
+.wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,28 +29,14 @@ body {
   padding: 0 10px; /*pads content when wrapper width = screen width"*/
 }
 
-#main-content {
+.main-content {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 57.5rem;
   height: 31.25rem;
-}
-
-#card-1 {
-  background-color: #e28625;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-
-#card-2 {
-  background-color: #006971;
-}
-
-#card-3 {
-  background-color: #004140;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-radius: 8px;
+  overflow: hidden; /*controls content bleed over border-radius*/
 }
 
 .card {
@@ -86,50 +75,60 @@ body {
   border: 2px solid #ffffff;
   border-radius: 1.56rem;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
-#btn-1 {
+.card-1 {
+  background-color: #e28625;
+}
+
+.card-2 {
+  background-color: #006971;
+}
+
+.card-3 {
+  background-color: #004140;
+}
+
+.btn-1 {
   color: #e28625;
 }
 
-#btn-1:hover {
+.btn-1:hover {
   background-color: #e28625;
   color: #ffffff;
 }
 
-#btn-2 {
+.btn-2 {
   color: #006971;
 }
 
-#btn-2:hover {
+.btn-2:hover {
   background-color: #006971;
   color: #ffffff;
 }
 
-#btn-3 {
+.btn-3 {
   color: #004140;
 }
 
-#btn-3:hover {
+.btn-3:hover {
   background-color: #004140;
   color: #ffffff;
 }
 
-@media only screen and (max-width: 575px) {
-  #wrapper {
+/* Media Query---------------------------------------------- */
+
+@media only screen and (max-width: 375px) {
+  .wrapper {
     justify-content: start;
     padding: 0px;
   }
-  #main-content {
+  .main-content {
     flex-direction: column;
     justify-content: start;
     align-items: center;
     width: 100%;
-  }
-  #card-1 {
-    border-radius: 0px;
-  }
-  #card-3 {
-    border-radius: 0px;
+    overflow: visible;
   }
 }
